@@ -52,7 +52,7 @@ const toggleTheme = () => {
     <nav class="navbar" :class="{ 'navbar-mobile': isMobile }">
       <div class="nav-container">
         <div class="nav-header">
-          <div class="nav-brand">First App</div>
+          <div class="nav-brand">MyDevTools</div>
           
           <!-- Hamburger menu button for mobile -->
           <button 
