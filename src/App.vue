@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
-import Counter from './components/Counter.vue';
+// import Counter from './components/Counter.vue';
 import ToDoList from './components/ToDoList.vue';
-import Weather from './components/Weather.vue';
+// import Weather from './components/Weather.vue';
 import JsonFormatter from './components/JsonFormatter.vue';
 import ContainerGenerator from './components/ContainerGenerator.vue';
 import GuidGenerator from './components/GuidGenerator.vue';
@@ -69,13 +69,13 @@ const toggleTheme = () => {
 
         <!-- Navigation links -->
         <div class="nav-links" :class="{ 'is-open': isMenuOpen }">
-          <button 
+          <!-- <button 
             @click="currentPage = 'counter'; isMenuOpen = false" 
             class="nav-link"
             :class="{ active: currentPage === 'counter' }"
           >
             🔢 Counter
-          </button>
+          </button> -->
           <button 
             @click="currentPage = 'todo'; isMenuOpen = false" 
             class="nav-link"
@@ -83,13 +83,13 @@ const toggleTheme = () => {
           >
             ✅ To Do List
           </button>
-          <button 
+          <!-- <button 
             @click="currentPage = 'weather'; isMenuOpen = false" 
             class="nav-link"
             :class="{ active: currentPage === 'weather' }"
           >
             🌤️ Weather
-          </button>
+          </button> -->
           <button 
             @click="currentPage = 'json'; isMenuOpen = false" 
             class="nav-link"
@@ -207,9 +207,9 @@ const toggleTheme = () => {
     </nav>
 
     <main class="main-content main-diff-mode">
-      <Counter v-if="currentPage === 'counter'" />
+      <!-- <Counter v-if="currentPage === 'counter'" /> -->
       <ToDoList v-if="currentPage === 'todo'" />
-      <Weather v-if="currentPage === 'weather'" />
+      <!-- <Weather v-if="currentPage === 'weather'" /> -->
       <JsonFormatter v-if="currentPage === 'json'" />
       <ContainerGenerator v-if="currentPage === 'container'" />
       <GuidGenerator v-if="currentPage === 'guid'" />
