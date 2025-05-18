@@ -2,6 +2,11 @@
 
 A comprehensive collection of developer tools built with Vue 3 and TypeScript. This application provides a suite of utilities to help developers in their daily tasks.
 
+## 🌐 Access the App
+
+- Vue.js Version: [mydevtools.org](https://mydevtools.org)
+- Blazor Version: [GitHub Repository](https://github.com/MrCull/MyDevTools)
+
 ## 🛠️ Features
 
 - **✅ To Do List**: Manage your tasks and todos
