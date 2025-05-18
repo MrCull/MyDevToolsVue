@@ -195,6 +195,12 @@ const toggleTheme = () => {
           >
           🎲 Random Nums
           </button>
+          <a 
+            href="https://www.blazor.mydevtools.org" 
+            class="nav-link  theme-toggle"
+          >
+            🔄 Blazor Version
+          </a>
           <button 
             @click="toggleTheme" 
             class="nav-link theme-toggle"
