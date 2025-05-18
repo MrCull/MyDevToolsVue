@@ -1,39 +1,77 @@
-# vue-counter-app
+# MyDevTools
 
-This template should help get you started developing with Vue 3 in Vite.
+A comprehensive collection of developer tools built with Vue 3 and TypeScript. This application provides a suite of utilities to help developers in their daily tasks.
 
-## Recommended IDE Setup
+## 🛠️ Features
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- **✅ To Do List**: Manage your tasks and todos
+- **📋 JSON Formatter**: Format and validate JSON data
+- **📦 Container Generator**: Generate Docker container configurations
+- **🔑 GUID Generator**: Generate unique identifiers
+- **🔀 Branch Formatter**: Format Git branch names according to conventions
+- **🔄 Diff Tool**: Compare and visualize differences between texts
+- **🗄️ SQL Formatter**: Format SQL queries with syntax highlighting
+- **🔐 Password Generator**: Generate secure passwords with customizable options
+- **🌍 Time Zone Converter**: Convert times between different time zones
+- **📱 QR Code Generator**: Create QR codes for any text or URL
+- **💻 C# Formatter**: Format C# code with proper indentation
+- **🔒 Hash Generator**: Generate various hash types (MD5, SHA-1, SHA-256, etc.)
+- **🔢 Number Base Converter**: Convert numbers between different bases
+- **📏 Unit Converter**: Convert between different units of measurement
+- **⏰ Cron Generator**: Generate cron expressions with a visual interface
+- **🎲 Random Numbers**: Generate random numbers with custom ranges
 
-## Type Support for `.vue` Imports in TS
+## 🚀 Getting Started
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+### Prerequisites
 
-## Customize configuration
+- Node.js (v14 or higher)
+- npm (v6 or higher)
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+### Installation
 
-## Project Setup
+1. Clone the repository:
+```sh
+git clone https://github.com/yourusername/MyDevTools.git
+cd MyDevTools
+```
 
+2. Install dependencies:
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
-
+3. Start the development server:
 ```sh
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+## 🛠️ Development
 
-```sh
-npm run build
-```
+### Recommended IDE Setup
 
-### Lint with [ESLint](https://eslint.org/)
+- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur)
 
-```sh
-npm run lint
-```
+### TypeScript Support
+
+This project uses TypeScript with Vue 3. For proper type checking and IDE support:
+- Use [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) for TypeScript language service
+- The project uses `vue-tsc` for type checking
+
+### Available Scripts
+
+- `npm run dev` - Start development server with hot-reload
+- `npm run build` - Build for production
+- `npm run lint` - Run ESLint for code linting
+
+## 🎨 Features
+
+- Dark/Light mode support
+- Responsive design for mobile and desktop
+- Modern UI with smooth animations
+- Type-safe development with TypeScript
+- Component-based architecture
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
