@@ -19,7 +19,7 @@ import UnitConverter from './components/UnitConverter.vue';
 import CronGenerator from './components/CronGenerator.vue';
 import RandomNumbers from './components/RandomNumbers.vue';
 
-const currentPage = ref('counter');
+const currentPage = ref('json');
 const isDarkMode = ref(false);
 const isMenuOpen = ref(false);
 const isMobile = ref(window.innerWidth < 768);
@@ -69,33 +69,40 @@ const toggleTheme = () => {
 
         <!-- Navigation links -->
         <div class="nav-links" :class="{ 'is-open': isMenuOpen }">
-          <!-- <button 
-            @click="currentPage = 'counter'; isMenuOpen = false" 
-            class="nav-link"
-            :class="{ active: currentPage === 'counter' }"
-          >
-            🔢 Counter
-          </button> -->
-          <button 
-            @click="currentPage = 'todo'; isMenuOpen = false" 
-            class="nav-link"
-            :class="{ active: currentPage === 'todo' }"
-          >
-            ✅ To Do List
-          </button>
-          <!-- <button 
-            @click="currentPage = 'weather'; isMenuOpen = false" 
-            class="nav-link"
-            :class="{ active: currentPage === 'weather' }"
-          >
-            🌤️ Weather
-          </button> -->
           <button 
             @click="currentPage = 'json'; isMenuOpen = false" 
             class="nav-link"
             :class="{ active: currentPage === 'json' }"
           >
             📋 JSON
+          </button>
+          <button 
+            @click="currentPage = 'sql'; isMenuOpen = false" 
+            class="nav-link"
+            :class="{ active: currentPage === 'sql' }"
+          >
+            🗄️ SQL
+          </button>
+          <button 
+            @click="currentPage = 'csharp'; isMenuOpen = false" 
+            class="nav-link"
+            :class="{ active: currentPage === 'csharp' }"
+          >
+            💻 C# Formatter
+          </button>
+          <button 
+            @click="currentPage = 'diff'; isMenuOpen = false" 
+            class="nav-link"
+            :class="{ active: currentPage === 'diff' }"
+          >
+            🔄 Diff
+          </button>
+          <button 
+            @click="currentPage = 'branch'; isMenuOpen = false" 
+            class="nav-link"
+            :class="{ active: currentPage === 'branch' }"
+          >
+            🔀 Branch
           </button>
           <button 
             @click="currentPage = 'container'; isMenuOpen = false" 
@@ -112,27 +119,6 @@ const toggleTheme = () => {
             🔑 GUID
           </button>
           <button 
-            @click="currentPage = 'branch'; isMenuOpen = false" 
-            class="nav-link"
-            :class="{ active: currentPage === 'branch' }"
-          >
-            🔀 Branch
-          </button>
-          <button 
-            @click="currentPage = 'diff'; isMenuOpen = false" 
-            class="nav-link"
-            :class="{ active: currentPage === 'diff' }"
-          >
-            🔄 Diff
-          </button>
-          <button 
-            @click="currentPage = 'sql'; isMenuOpen = false" 
-            class="nav-link"
-            :class="{ active: currentPage === 'sql' }"
-          >
-            🗄️ SQL
-          </button>
-          <button 
             @click="currentPage = 'password'; isMenuOpen = false" 
             class="nav-link"
             :class="{ active: currentPage === 'password' }"
@@ -140,11 +126,11 @@ const toggleTheme = () => {
             🔐 Password
           </button>
           <button 
-            @click="currentPage = 'timezone'; isMenuOpen = false" 
+            @click="currentPage = 'hash'; isMenuOpen = false" 
             class="nav-link"
-            :class="{ active: currentPage === 'timezone' }"
+            :class="{ active: currentPage === 'hash' }"
           >
-            🌍 Time Zone
+            🔒 Hash Generator
           </button>
           <button 
             @click="currentPage = 'qrcode'; isMenuOpen = false" 
@@ -154,18 +140,11 @@ const toggleTheme = () => {
             📱 QR Code
           </button>
           <button 
-            @click="currentPage = 'csharp'; isMenuOpen = false" 
+            @click="currentPage = 'timezone'; isMenuOpen = false" 
             class="nav-link"
-            :class="{ active: currentPage === 'csharp' }"
+            :class="{ active: currentPage === 'timezone' }"
           >
-            💻 C# Formatter
-          </button>
-          <button 
-            @click="currentPage = 'hash'; isMenuOpen = false" 
-            class="nav-link"
-            :class="{ active: currentPage === 'hash' }"
-          >
-            🔒 Hash Generator
+            🌍 Time Zone
           </button>
           <button 
             @click="currentPage = 'numberbase'; isMenuOpen = false" 
@@ -193,7 +172,14 @@ const toggleTheme = () => {
             class="nav-link"
             :class="{ active: currentPage === 'randomnumbers' }"
           >
-          🎲 Random Nums
+            🎲 Random Nums
+          </button>
+          <button 
+            @click="currentPage = 'todo'; isMenuOpen = false" 
+            class="nav-link"
+            :class="{ active: currentPage === 'todo' }"
+          >
+            ✅ To Do List
           </button>
           <a 
             href="https://www.blazor.mydevtools.org" 
