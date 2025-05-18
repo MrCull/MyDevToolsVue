@@ -50,13 +50,11 @@ npm run dev
 
 ### Recommended IDE Setup
 
-- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur)
+- [VSCode](https://code.visualstudio.com/)
 
 ### TypeScript Support
 
-This project uses TypeScript with Vue 3. For proper type checking and IDE support:
-- Use [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) for TypeScript language service
-- The project uses `vue-tsc` for type checking
+This project uses TypeScript with Vue 3 for type-safe development.
 
 ### Available Scripts
 
