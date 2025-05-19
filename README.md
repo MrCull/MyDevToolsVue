@@ -37,8 +37,8 @@ A comprehensive collection of developer tools built with Vue 3 and TypeScript. T
 
 1. Clone the repository:
 ```sh
-git clone https://github.com/yourusername/MyDevTools.git
-cd MyDevTools
+git clone https://github.com/yourusername/MyDevToolsVue.git
+cd MyDevToolsVue
 ```
 
 2. Install dependencies:
