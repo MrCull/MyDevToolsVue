@@ -30,9 +30,10 @@ describe('Time Zone Converter Component', () => {
     cy.get('[data-test-id=timezone-search-input]').type('Tokyo', { delay: 0, parseSpecialCharSequences: false });
     cy.get('[data-test-id^=timezone-search-result-]').first().click();
     cy.get('[data-test-id=timezone-search-input]').clear().type('London', { delay: 0, parseSpecialCharSequences: false });
+    cy.get('[data-test-id=timezone-search-input]').focus();
     cy.get('[data-test-id^=timezone-search-result-]').first().click();
     cy.get('[data-test-id^=timezone-card-]').should('have.length.at.least', 2);
     cy.get('[data-test-id=clear-all-btn]').click();
     cy.get('[data-test-id^=timezone-card-]').should('not.exist');
   });
-}); 
+});
