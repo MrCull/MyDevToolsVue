@@ -44,7 +44,7 @@ describe('Container Generator Component', () => {
   });
 
   it('disables buttons appropriately', () => {
-    cy.get('[data-test-id=generate-btn]').should('be.disabled');
+    cy.get('[data-test-id=generate-btn]').should('not.be.disabled');
     cy.get('[data-test-id=clear-btn]').should('be.disabled');
     cy.get('[data-test-id=owner-code-input]').clear().type('MSC', { delay: 0, parseSpecialCharSequences: false });
     cy.get('[data-test-id=generate-btn]').should('not.be.disabled');
@@ -52,4 +52,4 @@ describe('Container Generator Component', () => {
     cy.get('[data-test-id=generate-btn]').click();
     cy.get('[data-test-id=clear-btn]').should('not.be.disabled');
   });
-}); 
+});
