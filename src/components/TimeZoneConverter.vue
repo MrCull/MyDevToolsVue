@@ -16,16 +16,19 @@
             @input="filterTimeZones"
             @focus="isSearchFocused = true"
             @blur="handleBlur"
+            data-test-id="timezone-search-input"
           />
           <div 
             v-if="searchQuery && filteredTimeZones.length > 0 && isSearchFocused" 
             class="search-results"
+            data-test-id="timezone-search-results"
           >
             <div
               v-for="zone in filteredTimeZones"
               :key="zone.value"
               class="search-result-item"
               @mousedown="selectTimeZone(zone.value)"
+              :data-test-id="'timezone-search-result-' + zone.value"
             >
               <div class="result-name">{{ zone.label }}</div>
               <div class="result-details">{{ zone.details }}</div>
@@ -36,18 +39,18 @@
     </div>
 
     <div class="timezone-grid">
-      <div v-for="zone in sortedTimeZones" :key="zone" class="timezone-card">
+      <div v-for="zone in sortedTimeZones" :key="zone" class="timezone-card" :data-test-id="'timezone-card-' + zone">
         <div class="timezone-info">
           <h3>{{ formatTimeZoneName(zone) }}</h3>
           <div class="time">{{ getCurrentTime(zone) }}</div>
           <div class="offset">UTC {{ getTimeZoneOffset(zone) }}</div>
         </div>
-        <button @click="removeTimeZone(zone)" class="remove-button">×</button>
+        <button @click="removeTimeZone(zone)" class="remove-button" :data-test-id="'remove-btn-' + zone">×</button>
       </div>
     </div>
 
     <div v-if="savedTimeZones.length > 0" class="actions">
-      <button @click="clearTimeZones" class="clear-button">Clear All</button>
+      <button @click="clearTimeZones" class="clear-button" data-test-id="clear-all-btn">Clear All</button>
     </div>
   </div>
 </template>

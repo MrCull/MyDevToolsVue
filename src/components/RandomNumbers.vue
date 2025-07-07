@@ -10,6 +10,7 @@
                         id="min"
                         v-model="min"
                         class="input-field"
+                        data-test-id="min-input"
                     />
                 </div>
 
@@ -20,6 +21,7 @@
                         id="max"
                         v-model="max"
                         class="input-field"
+                        data-test-id="max-input"
                     />
                 </div>
 
@@ -32,6 +34,7 @@
                         min="1"
                         max="100"
                         class="input-field"
+                        data-test-id="quantity-input"
                     />
                 </div>
 
@@ -39,6 +42,7 @@
                     <button 
                         @click="generateNumbers" 
                         class="primary-btn"
+                        data-test-id="generate-btn"
                     >
                         Generate
                     </button>
@@ -46,6 +50,7 @@
                         @click="clearAll" 
                         class="secondary-btn"
                         :disabled="!numbers.length"
+                        data-test-id="clear-btn"
                     >
                         Clear
                     </button>
@@ -54,15 +59,15 @@
 
             <div class="output-section">
                 <h2 class="section-title">Generated Numbers</h2>
-                <div v-if="numbers.length" class="numbers-list">
+                <div v-if="numbers.length" class="numbers-list" data-test-id="numbers-output">
                     <div v-for="number in numbers" :key="number" class="number-item">
                         <span class="number-value" :class="{ 'copied': copiedNumbers.has(number) }">{{ number }}</span>
-                        <button @click="copyToClipboard(number)" class="copy-btn" :class="{ 'copied': copiedNumbers.has(number) }">
+                        <button @click="copyToClipboard(number)" class="copy-btn" :class="{ 'copied': copiedNumbers.has(number) }" :data-test-id="'copy-btn-' + number">
                             {{ copiedNumbers.has(number) ? 'Copied!' : 'Copy' }}
                         </button>
                     </div>
                 </div>
-                <div v-else class="placeholder-message">
+                <div v-else class="placeholder-message" data-test-id="placeholder-message">
                     Generated numbers will appear here
                 </div>
             </div>

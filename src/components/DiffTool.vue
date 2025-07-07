@@ -9,7 +9,7 @@
             <div class="input-panel">
                 <div class="input-header">
                     <label for="original">Original Text</label>
-                    <button @click="clearOriginal" class="clear-btn" :disabled="!original">Clear</button>
+                    <button @click="clearOriginal" class="clear-btn" :disabled="!original" data-test-id="clear-original-btn">Clear</button>
                 </div>
                 <textarea 
                     id="original"
@@ -17,13 +17,14 @@
                     class="input-field"
                     placeholder="Enter original text"
                     rows="10"
+                    data-test-id="original-input"
                 ></textarea>
             </div>
             
             <div class="input-panel">
                 <div class="input-header">
                     <label for="modified">Modified Text</label>
-                    <button @click="clearModified" class="clear-btn" :disabled="!modified">Clear</button>
+                    <button @click="clearModified" class="clear-btn" :disabled="!modified" data-test-id="clear-modified-btn">Clear</button>
                 </div>
                 <textarea 
                     id="modified"
@@ -31,6 +32,7 @@
                     class="input-field"
                     placeholder="Enter modified text"
                     rows="10"
+                    data-test-id="modified-input"
                 ></textarea>
             </div>
         </div>
@@ -40,6 +42,7 @@
                 @click="compareDiff" 
                 class="primary-btn"
                 :disabled="!original.trim() || !modified.trim()"
+                data-test-id="compare-btn"
             >
                 Compare
             </button>
@@ -47,12 +50,13 @@
                 @click="clearAll" 
                 class="secondary-btn"
                 :disabled="!original && !modified"
+                data-test-id="clear-all-btn"
             >
                 Clear All
             </button>
         </div>
         
-        <div v-if="diffResult.length" class="diff-result">
+        <div v-if="diffResult.length" class="diff-result" data-test-id="diff-result">
             <div class="split-view">
                 <div class="diff-panel original-panel">
                     <div class="panel-header">Original</div>

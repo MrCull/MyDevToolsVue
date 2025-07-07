@@ -9,6 +9,7 @@
                         id="minute"
                         v-model="minute"
                         class="input-field"
+                        data-test-id="minute-select"
                     >
                         <option value="*">Every minute (*)</option>
                         <option value="*/5">Every 5 minutes</option>
@@ -27,6 +28,7 @@
                         id="hour"
                         v-model="hour"
                         class="input-field"
+                        data-test-id="hour-select"
                     >
                         <option value="*">Every hour (*)</option>
                         <option value="0">At 12 AM</option>
@@ -45,6 +47,7 @@
                         id="day"
                         v-model="day"
                         class="input-field"
+                        data-test-id="day-select"
                     >
                         <option value="*">Every day (*)</option>
                         <option value="1">On the 1st</option>
@@ -60,6 +63,7 @@
                         id="month"
                         v-model="month"
                         class="input-field"
+                        data-test-id="month-select"
                     >
                         <option value="*">Every month (*)</option>
                         <option value="1">January</option>
@@ -83,6 +87,7 @@
                         id="weekday"
                         v-model="weekday"
                         class="input-field"
+                        data-test-id="weekday-select"
                     >
                         <option value="*">Every day (*)</option>
                         <option value="0">Sunday</option>
@@ -101,6 +106,7 @@
                     <button 
                         @click="generateCron" 
                         class="primary-btn"
+                        data-test-id="generate-btn"
                     >
                         Generate Cron
                     </button>
@@ -108,6 +114,7 @@
                         @click="clearAll" 
                         class="secondary-btn"
                         :disabled="!cronExpression"
+                        data-test-id="clear-btn"
                     >
                         Clear
                     </button>
@@ -116,10 +123,10 @@
 
             <div class="output-section">
                 <h2 class="section-title">Generated Cron Expression</h2>
-                <div v-if="cronExpression" class="cron-result">
+                <div v-if="cronExpression" class="cron-result" data-test-id="cron-output">
                     <div class="cron-display">
                         <span class="cron-text">{{ cronExpression }}</span>
-                        <button @click="copyToClipboard" class="copy-btn" :class="{ 'copied': isCopied }">
+                        <button @click="copyToClipboard" class="copy-btn" :class="{ 'copied': isCopied }" data-test-id="copy-btn">
                             {{ isCopied ? 'Copied!' : 'Copy' }}
                         </button>
                     </div>
@@ -127,7 +134,7 @@
                         {{ cronDescription }}
                     </div>
                 </div>
-                <div v-else class="placeholder-message">
+                <div v-else class="placeholder-message" data-test-id="placeholder-message">
                     Generated cron expression will appear here
                 </div>
             </div>

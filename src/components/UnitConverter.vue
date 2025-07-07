@@ -10,6 +10,7 @@
                         v-model="selectedCategory"
                         class="input-field"
                         @change="handleCategoryChange"
+                        data-test-id="category-select"
                     >
                         <option v-for="(units, category) in unitCategories" 
                                 :key="category" 
@@ -27,6 +28,7 @@
                             v-model="fromUnit"
                             class="input-field"
                             @change="convert"
+                            data-test-id="from-unit-select"
                         >
                             <option v-for="unit in availableUnits" 
                                     :key="unit.value" 
@@ -55,6 +57,7 @@
                         class="input-field"
                         placeholder="Enter value to convert..."
                         @input="convert"
+                        data-test-id="value-input"
                     />
                 </div>
 
@@ -66,6 +69,7 @@
                             v-model="toUnit"
                             class="input-field"
                             @change="convert"
+                            data-test-id="to-unit-select"
                         >
                             <option v-for="unit in availableUnits" 
                                     :key="unit.value" 
@@ -88,6 +92,7 @@
                     <button 
                         @click="swapUnits" 
                         class="secondary-btn"
+                        data-test-id="swap-btn"
                     >
                         🔄 Swap Units
                     </button>
@@ -95,6 +100,7 @@
                         @click="clearAll" 
                         class="secondary-btn"
                         :disabled="!inputValue"
+                        data-test-id="clear-btn"
                     >
                         Clear
                     </button>
@@ -103,10 +109,10 @@
 
             <div class="output-section">
                 <h2 class="section-title">Converted Value</h2>
-                <div v-if="convertedValue !== null" class="result">
+                <div v-if="convertedValue !== null" class="result" data-test-id="unit-output">
                     <div class="result-display">
                         <span class="result-text">{{ formatResult(convertedValue) }}</span>
-                        <button @click="copyToClipboard" class="copy-btn" :class="{ 'copied': isCopied }">
+                        <button @click="copyToClipboard" class="copy-btn" :class="{ 'copied': isCopied }" data-test-id="copy-btn">
                             {{ isCopied ? 'Copied!' : 'Copy' }}
                         </button>
                     </div>
@@ -114,7 +120,7 @@
                         {{ formatReverseConversion() }}
                     </div>
                 </div>
-                <div v-else class="placeholder-message">
+                <div v-else class="placeholder-message" data-test-id="placeholder-message">
                     Converted value will appear here
                 </div>
             </div>

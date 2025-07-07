@@ -10,6 +10,7 @@
                         v-model="input"
                         class="input-field"
                         placeholder="e.g. Story 121579: Delete any load containers"
+                        data-test-id="branch-input"
                     />
                 </div>
 
@@ -18,6 +19,7 @@
                         @click="formatName"
                         class="primary-btn"
                         :disabled="!input.trim()"
+                        data-test-id="format-btn"
                     >
                         Format
                     </button>
@@ -25,6 +27,7 @@
                         @click="clearAll"
                         class="secondary-btn"
                         :disabled="!formattedName"
+                        data-test-id="clear-btn"
                     >
                         Clear
                     </button>
@@ -33,15 +36,15 @@
 
             <div class="output-section">
                 <h2 class="section-title">Formatted Branch Name</h2>
-                <div v-if="formattedName" class="branch-list">
+                <div v-if="formattedName" class="branch-list" data-test-id="branch-output">
                     <div class="branch-item">
                         <span class="branch-name" :class="{ 'copied': isCopied }">{{ formattedName }}</span>
-                        <button @click="copyToClipboard(formattedName)" class="copy-btn" :class="{ 'copied': isCopied }">
+                        <button @click="copyToClipboard(formattedName)" class="copy-btn" :class="{ 'copied': isCopied }" data-test-id="copy-btn">
                             {{ isCopied ? 'Copied!' : 'Copy' }}
                         </button>
                     </div>
                 </div>
-                <div v-else class="placeholder-message">
+                <div v-else class="placeholder-message" data-test-id="placeholder-message">
                     Formatted branch name will appear here
                 </div>
             </div>

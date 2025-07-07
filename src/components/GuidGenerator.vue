@@ -9,6 +9,7 @@
                         id="format"
                         v-model="format"
                         class="input-field"
+                        data-test-id="format-select"
                     >
                         <option value="default">123E4567-E89B-12D3-A456-426614174000</option>    
                         <option value="lowercase">123e4567-e89b-12d3-a456-426614174000</option>
@@ -28,6 +29,7 @@
                         min="1"
                         max="100"
                         class="input-field"
+                        data-test-id="quantity-input"
                     />
                 </div>
 
@@ -35,6 +37,7 @@
                     <button 
                         @click="generateGuids" 
                         class="primary-btn"
+                        data-test-id="generate-btn"
                     >
                         Generate
                     </button>
@@ -42,6 +45,7 @@
                         @click="clearAll" 
                         class="secondary-btn"
                         :disabled="!guids.length"
+                        data-test-id="clear-btn"
                     >
                         Clear
                     </button>
@@ -50,15 +54,15 @@
 
             <div class="output-section">
                 <h2 class="section-title">Generated GUIDs</h2>
-                <div v-if="guids.length" class="container-list">
+                <div v-if="guids.length" class="container-list" data-test-id="guid-output">
                     <div v-for="guid in guids" :key="guid" class="container-item">
                         <span class="container-number" :class="{ 'copied': copiedIds.has(guid) }">{{ guid }}</span>
-                        <button @click="copyToClipboard(guid)" class="copy-btn" :class="{ 'copied': copiedIds.has(guid) }">
+                        <button @click="copyToClipboard(guid)" class="copy-btn" :class="{ 'copied': copiedIds.has(guid) }" :data-test-id="'copy-btn-' + guid">
                             {{ copiedIds.has(guid) ? 'Copied!' : 'Copy' }}
                         </button>
                     </div>
                 </div>
-                <div v-else class="placeholder-message">
+                <div v-else class="placeholder-message" data-test-id="placeholder-message">
                     Generated GUIDs will appear here
                 </div>
             </div>
