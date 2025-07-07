@@ -52,7 +52,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 
-const input = ref('123456 Story: Replace this with your work item');
+const input = ref('Story 123456: Replace this with your work item');
 const formattedName = ref('');
 const isCopied = ref(false);
 
