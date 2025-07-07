@@ -95,7 +95,7 @@
                 <div v-if="passwords.length" class="password-list" data-test-id="password-output">
                     <div v-for="(password, index) in passwords" :key="index" class="password-item">
                         <span class="password-text" :class="{ 'copied': copiedPasswords.has(password) }">{{ password }}</span>
-                        <button @click="copyToClipboard(password)" class="copy-btn" :class="{ 'copied': copiedPasswords.has(password) }" :data-test-id="'copy-btn-' + password">
+                        <button @click="copyToClipboard(password)" class="copy-btn" :class="{ 'copied': copiedPasswords.has(password) }" :data-test-id="'copy-btn-' + index">
                             {{ copiedPasswords.has(password) ? 'Copied!' : 'Copy' }}
                         </button>
                     </div>

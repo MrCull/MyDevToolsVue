@@ -35,7 +35,7 @@ describe('Password Generator Component', () => {
     cy.get('[data-test-id=generate-btn]').click();
     cy.get('[data-test-id=password-output] .password-item').first().then($item => {
       const password = $item.find('.password-text').text();
-      cy.get(`[data-test-id=copy-btn-${password}]`).click();
+      cy.get(`[data-test-id=copy-btn-0]`).click();
       cy.get('@writeText').should('have.been.calledWith', password);
     });
   });
@@ -56,4 +56,4 @@ describe('Password Generator Component', () => {
     cy.get('[data-test-id=uppercase-checkbox]').check({ force: true });
     cy.get('[data-test-id=generate-btn]').should('not.be.disabled');
   });
-}); 
+});
