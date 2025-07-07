@@ -5,7 +5,7 @@
             <div class="input-section">
                 <div class="form-group">
                     <label for="input">Branch Name Input</label>
-                    <input 
+                    <input
                         id="input"
                         v-model="input"
                         class="input-field"
@@ -14,15 +14,15 @@
                 </div>
 
                 <div class="button-group">
-                    <button 
-                        @click="formatName" 
+                    <button
+                        @click="formatName"
                         class="primary-btn"
                         :disabled="!input.trim()"
                     >
                         Format
                     </button>
-                    <button 
-                        @click="clearAll" 
+                    <button
+                        @click="clearAll"
                         class="secondary-btn"
                         :disabled="!formattedName"
                     >
@@ -63,13 +63,13 @@ onMounted(() => {
 
 const formatBranchName = (input: string): string => {
     // Extract number and description
-    const match = input.match(/^(\d+)\s+Story:\s*(.+)$/);
+    const match = input.match(/(?:\w+\s?)*?(\d+):\s*(.+)/);
     if (!match) return input;
 
     const [, number, description] = match;
 
     // Clean up the description
-    let cleanDesc = description
+    const cleanDesc = description
         // Replace spaces with underscores
         .replace(/\s+/g, '_')
         // Replace periods with underscores
@@ -312,4 +312,4 @@ label {
 .dark-mode .branch-item {
     background: rgba(31, 41, 55, 0.3);
 }
-</style> 
+</style>
