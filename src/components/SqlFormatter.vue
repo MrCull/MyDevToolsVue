@@ -9,24 +9,25 @@
                     @input="handleInput"
                     @paste="handlePaste"
                     class="sql-input"
+                    data-test-id="sql-input"
                 ></textarea>
                 <div class="button-group">
-                    <button @click="formatSql" class="primary-btn" :disabled="!inputSql.trim()">
+                    <button @click="formatSql" class="primary-btn" :disabled="!inputSql.trim()" data-test-id="format-btn">
                         Format
                     </button>
-                    <button @click="clearInput" class="secondary-btn" :disabled="!inputSql.trim()">
+                    <button @click="clearInput" class="secondary-btn" :disabled="!inputSql.trim()" data-test-id="clear-btn">
                         Clear
                     </button>
-                    <button @click="copyToClipboard" class="secondary-btn" :disabled="!formattedSql">
+                    <button @click="copyToClipboard" class="secondary-btn" :disabled="!formattedSql" data-test-id="copy-btn">
                         Copy
                     </button>
                 </div>
             </div>
             
             <div class="output-section">
-                <pre v-if="formattedSql" class="sql-output"><code v-html="highlightedSql"></code></pre>
-                <div v-if="error" class="error-message">{{ error }}</div>
-                <div v-if="!formattedSql && !error" class="placeholder-message">
+                <pre v-if="formattedSql" class="sql-output" data-test-id="sql-output"><code v-html="highlightedSql"></code></pre>
+                <div v-if="error" class="error-message" data-test-id="error-message">{{ error }}</div>
+                <div v-if="!formattedSql && !error" class="placeholder-message" data-test-id="placeholder-message">
                     Formatted SQL will appear here
                 </div>
             </div>

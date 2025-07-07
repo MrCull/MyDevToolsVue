@@ -9,24 +9,25 @@
                     @input="handleInput"
                     @paste="handlePaste"
                     class="json-input"
+                    data-test-id="json-input"
                 ></textarea>
                 <div class="button-group">
-                    <button @click="formatJson" class="primary-btn" :disabled="!inputJson.trim()">
+                    <button @click="formatJson" class="primary-btn" :disabled="!inputJson.trim()" data-test-id="format-btn">
                         Format
                     </button>
-                    <button @click="clearInput" class="secondary-btn" :disabled="!inputJson.trim()">
+                    <button @click="clearInput" class="secondary-btn" :disabled="!inputJson.trim()" data-test-id="clear-btn">
                         Clear
                     </button>
-                    <button @click="copyToClipboard" class="secondary-btn" :disabled="!formattedJson">
+                    <button @click="copyToClipboard" class="secondary-btn" :disabled="!formattedJson" data-test-id="copy-btn">
                         Copy
                     </button>
                 </div>
             </div>
             
             <div class="output-section">
-                <pre v-if="formattedJson" class="json-output"><code v-html="highlightedJson"></code></pre>
-                <div v-if="error" class="error-message">{{ error }}</div>
-                <div v-if="!formattedJson && !error" class="placeholder-message">
+                <pre v-if="formattedJson" class="json-output" data-test-id="json-output"><code v-html="highlightedJson"></code></pre>
+                <div v-if="error" class="error-message" data-test-id="error-message">{{ error }}</div>
+                <div v-if="!formattedJson && !error" class="placeholder-message" data-test-id="placeholder-message">
                     Formatted JSON will appear here
                 </div>
             </div>
