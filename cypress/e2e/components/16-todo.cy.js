@@ -16,6 +16,7 @@ describe('To Do List Component', () => {
   it('completes and uncompletes a task', () => {
     cy.get('[data-test-id=task-input]').type('Test Task 2', { delay: 0, parseSpecialCharSequences: false });
     cy.get('[data-test-id=add-btn]').click();
+    cy.get('[data-test-id=filter-completed-checkbox]').check({ force: true })
     cy.get('[data-test-id^=task-checkbox-]').last().check({ force: true });
     cy.get('[data-test-id^=task-desc-]').last().should('have.class', 'completed');
     cy.get('[data-test-id^=task-checkbox-]').last().uncheck({ force: true });
@@ -49,4 +50,4 @@ describe('To Do List Component', () => {
     cy.get('[data-test-id=delete-completed-btn]').click();
     cy.get('[data-test-id=task-list]').should('not.contain.text', 'Complete and Delete');
   });
-}); 
+});
