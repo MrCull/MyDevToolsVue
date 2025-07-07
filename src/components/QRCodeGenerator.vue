@@ -13,15 +13,16 @@
           class="text-input"
           placeholder="Enter text or URL..."
           @input="generateQR"
+          data-test-id="qrcode-input"
         />
       </div>
     </div>
 
-    <div class="qr-display" v-if="qrCode">
+    <div class="qr-display" v-if="qrCode" data-test-id="qrcode-output">
       <div class="qr-container">
         <QRCodeVue :value="qrCode" :size="200" level="H" />
       </div>
-      <button @click="downloadQR" class="download-button">Download QR Code</button>
+      <button @click="downloadQR" class="download-button" data-test-id="download-btn">Download QR Code</button>
     </div>
   </div>
 </template>

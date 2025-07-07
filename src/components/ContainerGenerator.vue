@@ -13,6 +13,7 @@
                         @input="validateOwnerCode"
                         placeholder="e.g. MSC (or blank)"
                         class="input-field"
+                        data-test-id="owner-code-input"
                     />
                     <span class="hint">Must be 3 capital letters or blank for random top owner</span>
                 </div>
@@ -23,6 +24,7 @@
                         id="categoryId"
                         v-model="categoryId"
                         class="input-field"
+                        data-test-id="category-select"
                     >
                         <option value="U">U (Freight Container)</option>
                         <option value="J">J (Detachable Equipment)</option>
@@ -39,6 +41,7 @@
                         min="1"
                         max="100"
                         class="input-field"
+                        data-test-id="quantity-input"
                     />
                 </div>
 
@@ -47,6 +50,7 @@
                         @click="generateNumbers" 
                         class="primary-btn"
                         :disabled="!isValidOwnerCode || !categoryId"
+                        data-test-id="generate-btn"
                     >
                         Generate
                     </button>
@@ -54,6 +58,7 @@
                         @click="clearAll" 
                         class="secondary-btn"
                         :disabled="!containerNumbers.length"
+                        data-test-id="clear-btn"
                     >
                         Clear
                     </button>
@@ -62,15 +67,15 @@
 
             <div class="output-section">
                 <h2 class="section-title">Generated Container Numbers</h2>
-                <div v-if="containerNumbers.length" class="container-list">
+                <div v-if="containerNumbers.length" class="container-list" data-test-id="container-output">
                     <div v-for="number in containerNumbers" :key="number" class="container-item">
                         <span class="container-number" :class="{ 'copied': copiedIds.has(number) }">{{ number }}</span>
-                        <button @click="copyToClipboard(number)" class="copy-btn" :class="{ 'copied': copiedIds.has(number) }">
+                        <button @click="copyToClipboard(number)" class="copy-btn" :class="{ 'copied': copiedIds.has(number) }" :data-test-id="'copy-btn-' + number">
                             {{ copiedIds.has(number) ? 'Copied!' : 'Copy' }}
                         </button>
                     </div>
                 </div>
-                <div v-else class="placeholder-message">
+                <div v-else class="placeholder-message" data-test-id="placeholder-message">
                     Generated container numbers will appear here
                 </div>
             </div>

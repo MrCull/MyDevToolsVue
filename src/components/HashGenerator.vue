@@ -11,6 +11,7 @@
                         class="input-field"
                         placeholder="Enter text to generate hash..."
                         rows="4"
+                        data-test-id="hash-input"
                     ></textarea>
                 </div>
 
@@ -20,6 +21,7 @@
                         id="hashType"
                         v-model="selectedHash"
                         class="input-field"
+                        data-test-id="hash-type-select"
                     >
                         <option value="sha1">SHA-1</option>
                         <option value="sha256">SHA-256</option>
@@ -33,6 +35,7 @@
                         @click="generateHash" 
                         class="primary-btn"
                         :disabled="!inputText.trim()"
+                        data-test-id="generate-btn"
                     >
                         Generate Hash
                     </button>
@@ -40,6 +43,7 @@
                         @click="clearAll" 
                         class="secondary-btn"
                         :disabled="!hashResult"
+                        data-test-id="clear-btn"
                     >
                         Clear
                     </button>
@@ -48,15 +52,15 @@
 
             <div class="output-section">
                 <h2 class="section-title">Generated Hash</h2>
-                <div v-if="hashResult" class="hash-result">
+                <div v-if="hashResult" class="hash-result" data-test-id="hash-output">
                     <div class="hash-display">
                         <span class="hash-text">{{ hashResult }}</span>
-                        <button @click="copyToClipboard" class="copy-btn" :class="{ 'copied': isCopied }">
+                        <button @click="copyToClipboard" class="copy-btn" :class="{ 'copied': isCopied }" data-test-id="copy-btn">
                             {{ isCopied ? 'Copied!' : 'Copy' }}
                         </button>
                     </div>
                 </div>
-                <div v-else class="placeholder-message">
+                <div v-else class="placeholder-message" data-test-id="placeholder-message">
                     Generated hash will appear here
                 </div>
             </div>
