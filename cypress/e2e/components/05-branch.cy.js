@@ -7,9 +7,10 @@ describe('Branch Formatter Component', () => {
 
   beforeEach(() => {
     cy.visit('/branch');
+    cy.get('[data-test-id=clear-btn]').click();
   });
 
-  it('shows placeholder initially', () => {
+  it('Shows placeholder initially', () => {
     cy.get('[data-test-id=branch-input]').should('exist');
     cy.get('[data-test-id=branch-output]').should('not.exist');
     cy.get('[data-test-id=placeholder-message]').should('be.visible');
@@ -50,4 +51,4 @@ describe('Branch Formatter Component', () => {
     cy.get('[data-test-id=format-btn]').click();
     cy.get('[data-test-id=clear-btn]').should('not.be.disabled');
   });
-}); 
+});
