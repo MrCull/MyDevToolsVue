@@ -4,11 +4,12 @@
 describe('Number Base Converter Component', () => {
   beforeEach(() => {
     cy.visit('/numberbase');
+    cy.get('[data-test-id=clear-btn]').click();
   });
 
   it('shows placeholder initially', () => {
     cy.get('[data-test-id=number-input]').should('exist');
-    cy.get('[data-test-id=number-output]').should('not.exist');
+    cy.get('[data-test-id=unit-output]').should('not.exist');
     cy.get('[data-test-id=placeholder-message]').should('be.visible');
   });
 
@@ -52,4 +53,4 @@ describe('Number Base Converter Component', () => {
     cy.get('[data-test-id=clear-btn]').click();
     cy.get('[data-test-id=clear-btn]').should('be.disabled');
   });
-}); 
+});
