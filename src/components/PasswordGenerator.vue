@@ -13,8 +13,9 @@
                             min="8"
                             max="64"
                             class="range-input"
+                            data-test-id="length-range"
                         />
-                        <span class="length-value">{{ length }}</span>
+                        <span class="length-value" data-test-id="length-value">{{ length }}</span>
                     </div>
                 </div>
 
@@ -25,6 +26,7 @@
                             <input 
                                 type="checkbox" 
                                 v-model="options.uppercase"
+                                data-test-id="uppercase-checkbox"
                             />
                             Uppercase (A-Z)
                         </label>
@@ -32,6 +34,7 @@
                             <input 
                                 type="checkbox" 
                                 v-model="options.lowercase"
+                                data-test-id="lowercase-checkbox"
                             />
                             Lowercase (a-z)
                         </label>
@@ -39,6 +42,7 @@
                             <input 
                                 type="checkbox" 
                                 v-model="options.numbers"
+                                data-test-id="numbers-checkbox"
                             />
                             Numbers (0-9)
                         </label>
@@ -46,6 +50,7 @@
                             <input 
                                 type="checkbox" 
                                 v-model="options.symbols"
+                                data-test-id="symbols-checkbox"
                             />
                             Symbols (!@#$%^&*)
                         </label>
@@ -61,6 +66,7 @@
                         min="1"
                         max="10"
                         class="input-field"
+                        data-test-id="quantity-input"
                     />
                 </div>
 
@@ -69,6 +75,7 @@
                         @click="generatePasswords" 
                         class="primary-btn"
                         :disabled="!isValidOptions"
+                        data-test-id="generate-btn"
                     >
                         Generate
                     </button>
@@ -76,6 +83,7 @@
                         @click="clearAll" 
                         class="secondary-btn"
                         :disabled="!passwords.length"
+                        data-test-id="clear-btn"
                     >
                         Clear
                     </button>
@@ -84,15 +92,15 @@
 
             <div class="output-section">
                 <h2 class="section-title">Generated Passwords</h2>
-                <div v-if="passwords.length" class="password-list">
+                <div v-if="passwords.length" class="password-list" data-test-id="password-output">
                     <div v-for="(password, index) in passwords" :key="index" class="password-item">
                         <span class="password-text" :class="{ 'copied': copiedPasswords.has(password) }">{{ password }}</span>
-                        <button @click="copyToClipboard(password)" class="copy-btn" :class="{ 'copied': copiedPasswords.has(password) }">
+                        <button @click="copyToClipboard(password)" class="copy-btn" :class="{ 'copied': copiedPasswords.has(password) }" :data-test-id="'copy-btn-' + password">
                             {{ copiedPasswords.has(password) ? 'Copied!' : 'Copy' }}
                         </button>
                     </div>
                 </div>
-                <div v-else class="placeholder-message">
+                <div v-else class="placeholder-message" data-test-id="placeholder-message">
                     Generated passwords will appear here
                 </div>
             </div>

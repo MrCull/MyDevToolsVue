@@ -3,29 +3,29 @@
     <h1 class="title">To Do List</h1>
     <div>
         <div>
-            <button class="primary-btn" @click="addTask" :disabled="!newTask.trim()">Add</button>
-            <input type="text" v-model="newTask" placeholder="Add a new task" @keyup.enter="addTask" />
+            <button class="primary-btn" @click="addTask" :disabled="!newTask.trim()" data-test-id="add-btn">Add</button>
+            <input type="text" v-model="newTask" placeholder="Add a new task" @keyup.enter="addTask" data-test-id="task-input" />
         </div>
         <div>
             <div class="toggle-group">
                 <label class="toggle-label">
                     <span class="toggle-text">Active</span>
-                    <input type="checkbox" v-model="filters.active">
+                    <input type="checkbox" v-model="filters.active" data-test-id="filter-active-checkbox">
                 </label>
                 <label class="toggle-label">
                     <span class="toggle-text">Completed</span>
-                    <input type="checkbox" v-model="filters.completed">
+                    <input type="checkbox" v-model="filters.completed" data-test-id="filter-completed-checkbox">
                 </label>
             </div>
-            <button v-show="filters.completed" class="secondary-btn" @click="clearCompleted">Delete Completed</button>
+            <button v-show="filters.completed" class="secondary-btn" @click="clearCompleted" data-test-id="delete-completed-btn">Delete Completed</button>
         </div>
         <div>
-            <TransitionGroup name="list" tag="ul" class="task-list">
-                <li v-for="task in filteredTasks" :key="task.id">
-                    <input type="checkbox" v-model="task.completed" @change="saveTasks" />
-                    <span class="task-description" :class="{ completed: task.completed }">{{ task.description }}</span>
+            <TransitionGroup name="list" tag="ul" class="task-list" data-test-id="task-list">
+                <li v-for="task in filteredTasks" :key="task.id" :data-test-id="'task-item-' + task.id">
+                    <input type="checkbox" v-model="task.completed" @change="saveTasks" :data-test-id="'task-checkbox-' + task.id" />
+                    <span class="task-description" :class="{ completed: task.completed }" :data-test-id="'task-desc-' + task.id">{{ task.description }}</span>
                     <span class="task-date">{{ formatDate(task.addedDate) }}</span>
-                    <button class="remove-btn" @click="removeTask(task.id)" aria-label="Remove task">×</button>
+                    <button class="remove-btn" @click="removeTask(task.id)" aria-label="Remove task" :data-test-id="'remove-task-btn-' + task.id">×</button>
                 </li>
             </TransitionGroup>
         </div>

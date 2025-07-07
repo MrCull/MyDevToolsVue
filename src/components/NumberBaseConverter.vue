@@ -11,6 +11,7 @@
                         class="input-field"
                         placeholder="Enter number to convert..."
                         @input="convertNumber"
+                        data-test-id="number-input"
                     />
                 </div>
 
@@ -21,6 +22,7 @@
                         v-model="fromBase"
                         class="input-field"
                         @change="convertNumber"
+                        data-test-id="from-base-select"
                     >
                         <option value="2">Binary (Base 2)</option>
                         <option value="8">Octal (Base 8)</option>
@@ -40,6 +42,7 @@
                         v-model="toBase"
                         class="input-field"
                         @change="convertNumber"
+                        data-test-id="to-base-select"
                     >
                         <option value="2">Binary (Base 2)</option>
                         <option value="8">Octal (Base 8)</option>
@@ -57,6 +60,7 @@
                         @click="clearAll" 
                         class="secondary-btn"
                         :disabled="!convertedNumber"
+                        data-test-id="clear-btn"
                     >
                         Clear
                     </button>
@@ -65,15 +69,15 @@
 
             <div class="output-section">
                 <h2 class="section-title">Converted Number</h2>
-                <div v-if="convertedNumber" class="result">
+                <div v-if="convertedNumber" class="result" data-test-id="number-output">
                     <div class="result-display">
                         <span class="result-text">{{ convertedNumber }}</span>
-                        <button @click="copyToClipboard" class="copy-btn" :class="{ 'copied': isCopied }">
+                        <button @click="copyToClipboard" class="copy-btn" :class="{ 'copied': isCopied }" data-test-id="copy-btn">
                             {{ isCopied ? 'Copied!' : 'Copy' }}
                         </button>
                     </div>
                 </div>
-                <div v-else class="placeholder-message">
+                <div v-else class="placeholder-message" data-test-id="placeholder-message">
                     Converted number will appear here
                 </div>
             </div>
