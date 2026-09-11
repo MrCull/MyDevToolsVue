@@ -1,34 +1,21 @@
 @import './base.css';
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
-}
+#app { min-height: 100vh; }
+body { background: var(--body-bg, #0b1120); color: var(--nav-text, #dbe5f5); font-family: var(--font-sans, system-ui, sans-serif); line-height: 1.5; }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
-}
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
-}
-
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
-  #app {
-min-width: 100%;
-    padding: 0 2rem;
-  }
-}
+/* Shared presentation layer for the self-contained legacy tools. Component-specific
+   layout remains local; these primitives make controls, panels, and empty states coherent. */
+.main-content .container { background: var(--container-bg) !important; border: 1px solid var(--border-color) !important; border-radius: 14px !important; box-shadow: var(--shadow-sm) !important; color: var(--nav-text) !important; margin: clamp(20px, 4vw, 48px) auto !important; max-width: min(1120px, calc(100% - 40px)) !important; min-height: auto !important; padding: clamp(20px, 3vw, 36px) !important; width: calc(100% - 40px) !important; }
+.main-content .container > .title { background: none !important; border: 0 !important; color: var(--text-strong) !important; font-size: clamp(1.65rem, 3vw, 2.25rem) !important; letter-spacing: -0.035em !important; line-height: 1.15 !important; margin: 0 0 8px !important; padding: 0 !important; text-align: left !important; -webkit-text-fill-color: currentColor !important; }
+.tool-page .container > .title { display: none !important; }
+.main-content .input-section, .main-content .output-section { background: var(--surface-raised); border: 1px solid var(--border-color); border-radius: 10px; padding: 18px; }
+.main-content .formatter { gap: 16px !important; padding: 0 !important; }
+.main-content .formatter .input-section, .main-content .formatter .output-section { height: min(64vh, 680px); }
+.main-content textarea, .main-content .input-field, .main-content select, .main-content input:not([type='checkbox']) { background: var(--surface-muted) !important; border: 1px solid var(--border-color) !important; border-radius: 8px !important; color: var(--text-strong) !important; min-height: 42px; }
+.main-content textarea { font-family: var(--font-mono) !important; padding: 12px !important; }
+.main-content textarea:focus, .main-content .input-field:focus, .main-content select:focus, .main-content input:focus { border-color: var(--primary-color) !important; box-shadow: 0 0 0 3px var(--focus-ring) !important; outline: 0 !important; }
+.main-content label, .main-content .section-title { color: var(--text-strong) !important; font-weight: 650 !important; }
+.main-content .primary-btn, .main-content .secondary-btn, .main-content .copy-btn { align-items: center; border: 1px solid transparent !important; border-radius: 8px !important; cursor: pointer; display: inline-flex; font-size: 0.86rem; font-weight: 650; justify-content: center; min-height: 42px; padding: 8px 14px !important; transition: background-color 150ms ease, border-color 150ms ease, box-shadow 150ms ease !important; }
+.main-content .primary-btn { background: var(--primary-color) !important; color: #fff !important; }.main-content .primary-btn:hover:not(:disabled) { background: var(--primary-hover) !important; box-shadow: 0 4px 12px var(--focus-ring) !important; transform: none !important; }.main-content .secondary-btn, .main-content .copy-btn { background: var(--button-bg) !important; border-color: var(--border-color) !important; color: var(--button-text) !important; }.main-content .secondary-btn:hover:not(:disabled), .main-content .copy-btn:hover { background: var(--button-hover) !important; transform: none !important; }.main-content button:disabled { cursor: not-allowed !important; opacity: 0.48; }
+.main-content .placeholder-message { align-items: center; background: var(--surface-muted) !important; border: 1px dashed var(--border-color) !important; border-radius: 9px; color: var(--text-muted) !important; display: flex; font-style: normal !important; justify-content: center; min-height: 130px; opacity: 1 !important; text-align: center; }.main-content .error-message { background: rgba(220, 38, 38, 0.12) !important; border: 1px solid rgba(248, 113, 113, 0.45); border-radius: 8px; color: #fca5a5 !important; }.main-content pre, .main-content .json-output, .main-content .diff-output { background: var(--surface-muted) !important; border-color: var(--border-color) !important; color: var(--text-strong) !important; font-family: var(--font-mono) !important; }.main-content .container-item { background: var(--surface-muted) !important; border-color: var(--border-color) !important; }.main-content .container-item:hover { border-color: var(--accent-border) !important; transform: none !important; }
+@media (max-width: 767px) { .main-content .container { margin: 16px auto !important; max-width: calc(100% - 28px) !important; padding: 20px !important; width: calc(100% - 28px) !important; }.main-content .formatter { grid-template-columns: 1fr !important; }.main-content .formatter .input-section, .main-content .formatter .output-section { height: auto; min-height: 280px; }.main-content .button-group { gap: 8px !important; }.main-content .primary-btn, .main-content .secondary-btn { flex: 1; min-width: 0 !important; } }
