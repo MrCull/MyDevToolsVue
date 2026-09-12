@@ -1,28 +1,4 @@
-:root, html[data-theme='dark'] {
-  color-scheme: dark;
-  --bg: #101316;
-  --bg-bar: #15191d;
-  --bg-tabstrip: #1a1f24;
-  --bg-surface: #1c2127;
-  --bg-pane: #15191c;
-  --bg-field: #111519;
-  --bg-hover: #252c33;
-  --fg: #edf1f5;
-  --fg-muted: #aeb8c2;
-  --fg-faint: #7f8a95;
-  --line: #39424b;
-  --line-strong: #52606c;
-  --accent: #75a7d9;
-  --accent-hover: #9ac2eb;
-  --accent-soft: #203448;
-  --danger: #e0736b;
-  --danger-soft: #422523;
-  --warning: #d9a441;
-  --focus: rgb(117 167 217 / 46%);
-  --syn-punct: #7a848f;
-}
-
-html[data-theme='light'] {
+:root, html[data-theme='light'] {
   color-scheme: light;
   --bg: #f3f4f6;
   --bg-bar: #ffffff;
@@ -44,6 +20,30 @@ html[data-theme='light'] {
   --warning: #8a5a00;
   --focus: rgb(57 79 193 / 30%);
   --syn-punct: #6e757e;
+}
+
+html[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #101316;
+  --bg-bar: #15191d;
+  --bg-tabstrip: #1a1f24;
+  --bg-surface: #1c2127;
+  --bg-pane: #15191c;
+  --bg-field: #111519;
+  --bg-hover: #252c33;
+  --fg: #edf1f5;
+  --fg-muted: #aeb8c2;
+  --fg-faint: #7f8a95;
+  --line: #39424b;
+  --line-strong: #52606c;
+  --accent: #75a7d9;
+  --accent-hover: #9ac2eb;
+  --accent-soft: #203448;
+  --danger: #e0736b;
+  --danger-soft: #422523;
+  --warning: #d9a441;
+  --focus: rgb(117 167 217 / 46%);
+  --syn-punct: #7a848f;
 }
 
 /* Compatibility aliases for existing tool components. */

@@ -3,9 +3,9 @@ import { readonly, ref } from 'vue'
 export type ThemeMode = 'dark' | 'light' | 'system'
 type ResolvedTheme = Exclude<ThemeMode, 'system'>
 
-const initialMode = (document.documentElement.dataset.themeMode as ThemeMode | undefined) ?? 'dark'
+const initialMode = (document.documentElement.dataset.themeMode as ThemeMode | undefined) ?? 'light'
 const mode = ref<ThemeMode>(initialMode)
-const resolved = ref<ResolvedTheme>((document.documentElement.dataset.theme as ResolvedTheme | undefined) ?? 'dark')
+const resolved = ref<ResolvedTheme>((document.documentElement.dataset.theme as ResolvedTheme | undefined) ?? 'light')
 
 function resolve(value: ThemeMode): ResolvedTheme {
   return value === 'system' ? (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark') : value
