@@ -331,7 +331,4 @@ label {
     }
 }
 
-.dark-mode .result {
-    background: rgba(31, 41, 55, 0.3);
-}
-</style> 
+</style>

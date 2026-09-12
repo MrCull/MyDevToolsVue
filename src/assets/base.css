@@ -1,7 +1,7 @@
 * { box-sizing: border-box; }
-html { background: #0b1120; }
-body { margin: 0; min-width: 320px; }
+html { background: var(--bg); }
+body { background: var(--bg); color: var(--fg); font-family: var(--font-body); margin: 0; min-width: 320px; }
 button, input, select, textarea { font: inherit; }
 button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
-:focus-visible { outline: 3px solid var(--primary-color); outline-offset: 2px; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
 .sr-only { clip: rect(0, 0, 0, 0); clip-path: inset(50%); height: 1px; overflow: hidden; position: absolute; white-space: nowrap; width: 1px; }

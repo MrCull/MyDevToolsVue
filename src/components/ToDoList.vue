@@ -25,7 +25,7 @@
                     <input type="checkbox" v-model="task.completed" @change="saveTasks" :data-test-id="'task-checkbox-' + task.id" />
                     <span class="task-description" :class="{ completed: task.completed }" :data-test-id="'task-desc-' + task.id">{{ task.description }}</span>
                     <span class="task-date">{{ formatDate(task.addedDate) }}</span>
-                    <button class="remove-btn" @click="removeTask(task.id)" aria-label="Remove task" :data-test-id="'remove-task-btn-' + task.id">×</button>
+                    <button class="remove-btn" @click="removeTask(task.id)" aria-label="Remove task" :data-test-id="'remove-task-btn-' + task.id">Ãƒâ€”</button>
                 </li>
             </TransitionGroup>
         </div>
@@ -115,7 +115,7 @@ const formatDate = (dateString: string): string => {
 </script>
 
 
-<style>
+<style scoped>
 .container {
   width: 100%;
   max-width: 800px;
@@ -143,11 +143,6 @@ const formatDate = (dateString: string): string => {
   opacity: 0.8;
 }
 
-.dark-mode .container {
-  background: var(--container-bg);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-}
 
 .title {
   font-size: 2.5rem;
@@ -232,13 +227,13 @@ const formatDate = (dateString: string): string => {
 }
 
 .container .primary-btn {
-  background: linear-gradient(135deg, #4f46e5, #6366f1, #818cf8) !important;
-  color: white !important;
+  background: linear-gradient(135deg, #4f46e5, #6366f1, #818cf8);
+  color: white;
   font-weight: 600;
   padding: 1rem 2.5rem;
   border-radius: 12px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: none !important;
+  border: none;
   box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
   letter-spacing: 0.5px;
   font-size: 1.1rem;
@@ -276,13 +271,13 @@ const formatDate = (dateString: string): string => {
 }
 
 .container .secondary-btn {
-  background: linear-gradient(135deg, #f3f4f6, #e5e7eb) !important;
-  color: #374151 !important;
+  background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+  color: #374151;
   font-weight: 600;
   padding: 1rem 2rem;
   border-radius: 12px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: none !important;
+  border: none;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   letter-spacing: 0.5px;
   font-size: 1.1rem;
@@ -314,7 +309,7 @@ const formatDate = (dateString: string): string => {
 }
 
 .container li input[type="checkbox"]:checked::after {
-  content: '✓';
+  content: 'Ã¢Å“â€œ';
   position: absolute;
   color: white;
   font-size: 16px;
@@ -348,9 +343,6 @@ const formatDate = (dateString: string): string => {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.dark-mode .toggle-group {
-  background: rgba(31, 41, 55, 0.5);
-}
 
 .toggle-label {
   display: flex;
@@ -366,9 +358,6 @@ const formatDate = (dateString: string): string => {
   background: rgba(79, 70, 229, 0.1);
 }
 
-.dark-mode .toggle-label:hover {
-  background: rgba(99, 102, 241, 0.2);
-}
 
 .toggle-text {
   color: var(--text-color);
@@ -422,16 +411,12 @@ const formatDate = (dateString: string): string => {
   text-align: center;
 }
 
-.dark-mode .task-date {
-  color: #9ca3af;
-  background: rgba(75, 85, 99, 0.3);
-}
 
 /* Enhanced remove button */
 .container li .remove-btn {
   opacity: 0.7;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  background: rgba(229, 62, 62, 0.1) !important;
+  background: rgba(229, 62, 62, 0.1);
   border-radius: 50%;
   width: 40px;
   height: 40px;
@@ -503,59 +488,15 @@ const formatDate = (dateString: string): string => {
   margin: 1rem 0;
 }
 
-.dark-mode .task-list:empty::before {
-  color: #9ca3af;
-  background: rgba(31, 41, 55, 0.5);
-}
 
-.dark-mode .toggle-group {
-  background: rgba(31, 41, 55, 0.5);
-}
 
-.dark-mode .toggle-label:hover {
-  background: rgba(99, 102, 241, 0.2);
-}
 
-.dark-mode .task-list:empty::before {
-  color: #9ca3af;
-  background: rgba(31, 41, 55, 0.5);
-}
 
-.dark-mode input[type="text"] {
-  background: rgba(31, 41, 55, 0.8);
-  color: #f3f4f6;
-  border-color: #4b5563;
-}
 
-.dark-mode input[type="text"]::placeholder {
-  color: #9ca3af;
-}
 
-.dark-mode .task-description {
-  color: #f3f4f6;
-}
 
-.dark-mode .task-date {
-  color: #9ca3af;
-  background: rgba(75, 85, 99, 0.3);
-}
 
-.dark-mode li {
-  background: rgba(31, 41, 55, 0.8);
-  border-color: #4b5563;
-}
 
-.dark-mode .task-description.completed {
-  color: #9ca3af;
-}
 
-.dark-mode input[type="checkbox"] {
-  background: #374151;
-  border-color: #6366f1;
-}
 
-.dark-mode .secondary-btn {
-  background: linear-gradient(135deg, #374151, #4b5563) !important;
-  color: #f3f4f6 !important;
-}
-</style> 
+</style>

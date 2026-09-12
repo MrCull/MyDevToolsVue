@@ -43,7 +43,6 @@ import hljs from 'highlight.js/lib/core';
 import json from 'highlight.js/lib/languages/json';
 // Import the GitHub Dark theme CSS for syntax highlighting - provides base styles for code highlighting
 // Used classes: .hljs-attr (keys), .hljs-string (string values), .hljs-number (numbers), .hljs-literal (true/false/null)
-import 'highlight.js/styles/github-dark.css';
 
 // Register JSON language
 hljs.registerLanguage('json', json);
@@ -207,25 +206,10 @@ const copyToClipboard = async () => {
 }
 
 /* Dark mode adjustments */
-.dark-mode .json-output {
-    background: rgba(31, 41, 55, 0.8);
-}
 
-.dark-mode .hljs-attr {
-    color: #818cf8;
-}
 
-.dark-mode .hljs-string {
-    color: #34d399;
-}
 
-.dark-mode .hljs-number {
-    color: #fbbf24;
-}
 
-.dark-mode .hljs-literal {
-    color: #a78bfa;
-}
 
 .button-group {
     display: flex;
@@ -305,13 +289,5 @@ const copyToClipboard = async () => {
     }
 }
 
-.dark-mode .json-input,
-.dark-mode .json-output {
-    background: rgba(31, 41, 55, 0.8);
-    border-color: #4b5563;
-}
 
-.dark-mode .placeholder-message {
-    color: var(--nav-text);
-}
-</style> 
+</style>

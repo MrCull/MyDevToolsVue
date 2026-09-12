@@ -39,7 +39,6 @@
 import { ref, computed } from 'vue';
 import hljs from 'highlight.js/lib/core';
 import csharp from 'highlight.js/lib/languages/csharp';
-import 'highlight.js/styles/github-dark.css';
 
 // Register C# language
 hljs.registerLanguage('csharp', csharp);
@@ -228,51 +227,16 @@ const copyToClipboard = async () => {
 }
 
 /* Dark mode adjustments */
-.dark-mode .code-input,
-.dark-mode .code-output {
-    background: #1e1e1e;
-    border-color: #4b5563;
-}
 
-.dark-mode .code-input {
-    color: #d4d4d4;
-}
 
-.dark-mode .code-output code {
-    color: #d4d4d4;
-}
 
-.dark-mode .code-input::placeholder {
-    color: #6b7280;
-}
 
-.dark-mode .hljs-keyword {
-    color: #569cd6;
-}
 
-.dark-mode .hljs-string {
-    color: #ce9178;
-}
 
-.dark-mode .hljs-number {
-    color: #b5cea8;
-}
 
-.dark-mode .hljs-comment {
-    color: #6a9955;
-}
 
-.dark-mode .hljs-function {
-    color: #dcdcaa;
-}
 
-.dark-mode .hljs-class {
-    color: #4ec9b0;
-}
 
-.dark-mode .hljs-type {
-    color: #4ec9b0;
-}
 
 .button-group {
     display: flex;
@@ -351,4 +315,4 @@ const copyToClipboard = async () => {
         justify-content: center;
     }
 }
-</style> 
+</style>

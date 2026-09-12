@@ -312,7 +312,4 @@ label {
     }
 }
 
-.dark-mode .branch-item {
-    background: rgba(31, 41, 55, 0.3);
-}
 </style>

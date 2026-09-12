@@ -1,0 +1,2 @@
+<template><section class="tool-surface"><slot name="tabs" /><div class="surface-body"><slot /></div></section></template>
+<style scoped>.tool-surface { background: var(--bg-surface); border: 1px solid var(--line); border-radius: var(--radius-md); box-shadow: var(--shadow-2); min-width: 0; overflow: hidden; }.surface-body { min-height: 540px; } @media (max-width: 599px) { .tool-surface { border-left: 0; border-radius: 0; border-right: 0; }.surface-body { min-height: calc(100vh - 92px); } }</style>

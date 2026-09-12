@@ -42,7 +42,7 @@
                             @mouseleave="showTooltip = false"
                             :title="getUnitInfo(fromUnit)"
                         >
-                            ℹ️
+                            Ã¢â€žÂ¹Ã¯Â¸Â
                         </button>
                     </div>
                 </div>
@@ -83,7 +83,7 @@
                             @mouseleave="showTooltip = false"
                             :title="getUnitInfo(toUnit)"
                         >
-                            ℹ️
+                            Ã¢â€žÂ¹Ã¯Â¸Â
                         </button>
                     </div>
                 </div>
@@ -94,7 +94,7 @@
                         class="secondary-btn"
                         data-test-id="swap-btn"
                     >
-                        🔄 Swap Units
+                        Ã°Å¸â€â€ž Swap Units
                     </button>
                     <button 
                         @click="clearAll" 
@@ -516,7 +516,4 @@ label {
     }
 }
 
-.dark-mode .result {
-    background: rgba(31, 41, 55, 0.3);
-}
-</style> 
+</style>

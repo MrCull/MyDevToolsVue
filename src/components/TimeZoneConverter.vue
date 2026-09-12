@@ -730,4 +730,4 @@ const handleBlur = () => {
     text-align: center;
   }
 }
-</style> 
+</style>

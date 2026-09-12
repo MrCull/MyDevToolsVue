@@ -1,0 +1,6 @@
+.hljs { background: transparent; color: var(--fg); }
+.hljs-punctuation, .hljs-operator { color: var(--syn-punct); }
+.hljs-attr, .hljs-attribute, .hljs-keyword, .hljs-selector-tag { color: var(--accent); }
+.hljs-string, .hljs-doctag { color: #8ec49a; }
+.hljs-number, .hljs-literal, .hljs-symbol { color: #d9a441; }
+.hljs-comment, .hljs-quote { color: var(--fg-faint); }

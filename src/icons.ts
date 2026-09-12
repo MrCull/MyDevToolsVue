@@ -1,0 +1,28 @@
+export const iconPaths = {
+  mark: ['M3 4h7v3H6v10h4v3H3V4Z', 'M21 4h-7v3h4v10h-4v3h7V4Z'],
+  json: ['M9 4C6.7 4 6 5.4 6 7.5v2c0 1.4-.6 2.5-2 2.5 1.4 0 2 1.1 2 2.5v2C6 18.6 6.7 20 9 20', 'M15 4c2.3 0 3 1.4 3 3.5v2c0 1.4.6 2.5 2 2.5-1.4 0-2 1.1-2 2.5v2c0 2.1-.7 3.5-3 3.5'],
+  sql: ['M5 5h14M5 10h9M5 15h14M5 20h7'],
+  csharp: ['M7 5 3 12l4 7M17 5l4 7-4 7M10 14h4M12 12v4'],
+  diff: ['M4 7h11M4 17h11M15 4v6M12 7h6M18 14v6M15 17h6'],
+  branch: ['M7 5v14M7 5a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM7 19a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM7 12h7a3 3 0 0 0 3-3V7'],
+  container: ['M4 6h16v12H4zM8 6v12M16 6v12M4 10h16'],
+  guid: ['M8 4h8v4h4v8h-4v4H8v-4H4V8h4z'],
+  password: ['M7 11V8a5 5 0 0 1 10 0v3M5 11h14v9H5zM12 14v3'],
+  hash: ['M8 4 6 20M18 4l-2 16M4 9h16M3 15h16'],
+  qrcode: ['M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h2M18 14h2v3M14 18h6'],
+  cron: ['M12 5v7l4 3M4 12a8 8 0 1 0 16 0 8 8 0 0 0-16 0'],
+  random: ['M5 7h3v3H5zM16 5h3v3h-3zM10 13h3v3h-3zM17 16h3v3h-3zM5 17h3v3H5z'],
+  timezone: ['M12 4v8l4 3M4 12a8 8 0 1 0 16 0 8 8 0 0 0-16 0'],
+  numberbase: ['M5 6h14M5 12h14M5 18h14M8 4v4M16 10v4M10 16v4'],
+  unit: ['M5 19 19 5M6 6h.01M18 18h.01M9 9l6 6'],
+  todo: ['M5 7h2l2 2 4-4M5 13h2l2 2 4-4M5 19h2l2 2 4-4'],
+  search: ['m20 20-4.2-4.2M10.7 17a6.3 6.3 0 1 1 0-12.6 6.3 6.3 0 0 1 0 12.6Z'],
+  external: ['M14 5h5v5M19 5l-8 8M19 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5'],
+  sun: ['M12 4v2M12 18v2M4 12h2M18 12h2M6.3 6.3l1.4 1.4M16.3 16.3l1.4 1.4M17.7 6.3l-1.4 1.4M7.7 16.3l-1.4 1.4M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0'],
+  moon: ['M19 15.5A8 8 0 1 1 8.5 5 6 6 0 0 0 19 15.5Z'],
+  monitor: ['M4 5h16v11H4zM9 20h6M12 16v4'],
+  close: ['M6 6l12 12M18 6 6 18'],
+  chevron: ['m9 18 6-6-6-6'],
+} as const
+
+export type IconName = keyof typeof iconPaths

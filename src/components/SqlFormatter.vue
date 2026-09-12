@@ -45,7 +45,6 @@ import hljs from 'highlight.js/lib/core';
 import sql from 'highlight.js/lib/languages/sql';
 // Import the GitHub Dark theme CSS for syntax highlighting - provides base styles for code highlighting
 // Used classes: .hljs-keyword (keywords), .hljs-string (strings), .hljs-number (numbers), .hljs-function (functions), .hljs-operator (operators), .hljs-comment (comments)
-import 'highlight.js/styles/github-dark.css';
 
 // Register SQL language
 hljs.registerLanguage('sql', sql);
@@ -205,33 +204,12 @@ const copyToClipboard = async () => {
 }
 
 /* Dark mode adjustments */
-.dark-mode .sql-output {
-    background: rgba(31, 41, 55, 0.8);
-}
 
-.dark-mode .hljs-keyword {
-    color: #818cf8;
-}
 
-.dark-mode .hljs-string {
-    color: #34d399;
-}
 
-.dark-mode .hljs-number {
-    color: #fbbf24;
-}
 
-.dark-mode .hljs-function {
-    color: #a78bfa;
-}
 
-.dark-mode .hljs-operator {
-    color: #f87171;
-}
 
-.dark-mode .hljs-comment {
-    color: #9ca3af;
-}
 
 .button-group {
     display: flex;
@@ -311,13 +289,5 @@ const copyToClipboard = async () => {
     }
 }
 
-.dark-mode .sql-input,
-.dark-mode .sql-output {
-    background: rgba(31, 41, 55, 0.8);
-    border-color: #4b5563;
-}
 
-.dark-mode .placeholder-message {
-    color: var(--nav-text);
-}
-</style> 
+</style>

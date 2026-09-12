@@ -33,7 +33,7 @@ jobs:
         run: npm run build
 
       - name: Run Cypress E2E tests
-        run: npx start-server-and-test preview http://localhost:4173 cy:run
+        run: npm run test:e2e
 
   deploy_job:
     name: Deploy to Azure Static Web Apps

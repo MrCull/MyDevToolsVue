@@ -389,7 +389,4 @@ label {
     }
 }
 
-.dark-mode .container-item {
-    background: rgba(31, 41, 55, 0.3);
-}
-</style> 
+</style>

@@ -459,7 +459,4 @@ const copyToClipboard = async (password: string) => {
     }
 }
 
-.dark-mode .password-item {
-    background: rgba(31, 41, 55, 0.3);
-}
-</style> 
+</style>
