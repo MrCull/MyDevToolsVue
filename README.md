@@ -25,6 +25,15 @@ A comprehensive collection of developer tools built with Vue 3 and TypeScript. T
 - **📏 Unit Converter**: Convert between different units of measurement
 - **⏰ Cron Generator**: Generate cron expressions with a visual interface
 - **🎲 Random Numbers**: Generate random numbers with custom ranges
+- **🕒 Unix Timestamp Converter**: Convert timestamps and readable dates
+- **🔤 Encoder / Decoder**: Transform Base64, URLs, and HTML entities
+- **🔑 JWT Decoder**: Inspect token headers, claims, and validity locally
+- **🧪 Regex Tester**: Test JavaScript regular expressions and replacements
+- **🔁 Data Format Converter**: Convert JSON, YAML, CSV, TSV, and XML
+- **🎨 Color Converter**: Convert colors and verify WCAG contrast
+- **🔠 Text Case & Line Tools**: Change case, sort, deduplicate, and inspect text
+- **🧬 Fake Data Generator**: Create deterministic sample records and Lorem Ipsum
+- **📝 Markdown Previewer**: Render a sanitized live Markdown preview
 
 ## 🚀 Getting Started
 

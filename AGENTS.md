@@ -28,3 +28,7 @@ npm run test:e2e    # preview the built app and run Cypress
 ## Before finishing
 
 Run `npm run build`, then `npm run test:e2e` for behavior changes. Check light/dark themes and a narrow mobile viewport for shell or tool layout work.
+
+## Editing files
+
+- Never write source files with Windows PowerShell 5.1 `Set-Content`, `Out-File`, or `>`; these commands can reinterpret UTF-8 as ANSI or add a BOM. Use editor tools or Node/Git for scripted edits. `npm run build` runs `check:encoding` and fails on garbled text.

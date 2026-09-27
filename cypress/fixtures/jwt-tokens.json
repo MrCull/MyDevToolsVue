@@ -1,0 +1,4 @@
+{
+  "expired": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJleHBpcmVkLXVzZXIiLCJpYXQiOjk0NjY4NDgwMCwiZXhwIjo5NzgzMDcyMDB9.test-signature",
+  "valid": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmdXR1cmUtdXNlciIsImlhdCI6MTc2NzIyNTYwMCwiZXhwIjo0MDcwOTA4ODAwfQ.test-signature"
+}
