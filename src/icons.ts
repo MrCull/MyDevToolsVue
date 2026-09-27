@@ -22,6 +22,17 @@ export const iconPaths = {
   moon: ['M19 15.5A8 8 0 1 1 8.5 5 6 6 0 0 0 19 15.5Z'],
   monitor: ['M4 5h16v11H4zM9 20h6M12 16v4'],
   close: ['M6 6l12 12M18 6 6 18'],
+  info: ['M12 11v6M12 7h.01', 'M20 12a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z'],
+  swap: ['M7 7h11l-3-3M17 17H6l3 3'],
+  jwt: ['M7 5h10M7 19h10M5 8l2 4-2 4M19 8l-2 4 2 4M10 12h4'],
+  encode: ['M9 5 4 12l5 7M15 5l5 7-5 7M13 4l-2 16'],
+  timestamp: ['M12 7v5l3 2', 'M20 12a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z'],
+  regex: ['M4 17c2-7 5-10 8-10 4 0 3 7-1 7-3 0-2-5 2-5 4 0 5 6 5 8M19 5v4M17 7h4'],
+  dataconvert: ['M7 7h11l-3-3M17 17H6l3 3M5 7v4M19 13v4'],
+  color: ['M12 3c4 4 7 7 7 11a7 7 0 0 1-14 0c0-4 3-7 7-11ZM8 15h8'],
+  textcase: ['M5 18 10 6l5 12M7 14h6M16 10h4M18 8v10'],
+  fakedata: ['M4 7h16v12H4zM8 11h4M8 15h8M16 7V4M8 7V4'],
+  markdown: ['M4 5h16v14H4zM7 15V9l3 3 3-3v6M16 9v6M14 13l2 2 2-2'],
   chevron: ['m9 18 6-6-6-6'],
 } as const
 

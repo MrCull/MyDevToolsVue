@@ -25,7 +25,7 @@
                     <input type="checkbox" v-model="task.completed" @change="saveTasks" :data-test-id="'task-checkbox-' + task.id" />
                     <span class="task-description" :class="{ completed: task.completed }" :data-test-id="'task-desc-' + task.id">{{ task.description }}</span>
                     <span class="task-date">{{ formatDate(task.addedDate) }}</span>
-                    <button class="remove-btn" @click="removeTask(task.id)" aria-label="Remove task" :data-test-id="'remove-task-btn-' + task.id">Ãƒâ€”</button>
+                    <button class="remove-btn" @click="removeTask(task.id)" aria-label="Remove task" :data-test-id="'remove-task-btn-' + task.id"><AppIcon name="close" /></button>
                 </li>
             </TransitionGroup>
         </div>
@@ -34,6 +34,7 @@
 </template>
 
 <script setup lang="ts">
+import AppIcon from './AppIcon.vue'
 import { ref, computed, onMounted } from "vue";
 
 interface Task {
@@ -309,7 +310,7 @@ const formatDate = (dateString: string): string => {
 }
 
 .container li input[type="checkbox"]:checked::after {
-  content: 'Ã¢Å“â€œ';
+  content: '\2713';
   position: absolute;
   color: white;
   font-size: 16px;

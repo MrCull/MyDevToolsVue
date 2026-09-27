@@ -38,11 +38,13 @@
                         </select>
                         <button 
                             class="info-btn"
+                            :aria-label="`About ${getUnitLabel(fromUnit)}`"
+                            data-test-id="from-unit-info"
                             @mouseenter="showTooltip = true"
                             @mouseleave="showTooltip = false"
                             :title="getUnitInfo(fromUnit)"
                         >
-                            Ã¢â€žÂ¹Ã¯Â¸Â
+                            <AppIcon name="info" />
                         </button>
                     </div>
                 </div>
@@ -79,11 +81,13 @@
                         </select>
                         <button 
                             class="info-btn"
+                            :aria-label="`About ${getUnitLabel(toUnit)}`"
+                            data-test-id="to-unit-info"
                             @mouseenter="showTooltip = true"
                             @mouseleave="showTooltip = false"
                             :title="getUnitInfo(toUnit)"
                         >
-                            Ã¢â€žÂ¹Ã¯Â¸Â
+                            <AppIcon name="info" />
                         </button>
                     </div>
                 </div>
@@ -94,7 +98,8 @@
                         class="secondary-btn"
                         data-test-id="swap-btn"
                     >
-                        Ã°Å¸â€â€ž Swap Units
+                        <AppIcon name="swap" />
+                        Swap Units
                     </button>
                     <button 
                         @click="clearAll" 
@@ -129,6 +134,7 @@
 </template>
 
 <script setup lang="ts">
+import AppIcon from './AppIcon.vue'
 import { ref, onMounted, computed, watch } from 'vue';
 
 // Unit categories and their units
@@ -197,6 +203,9 @@ const getUnitInfo = (unit: string): string => {
     };
     return unitInfo[unit] || '';
 };
+
+const getUnitLabel = (unit: string): string =>
+    availableUnits.value.find((option) => option.value === unit)?.label ?? unit;
 
 // Handle category change
 const handleCategoryChange = () => {
@@ -369,6 +378,11 @@ watch([selectedCategory, fromUnit, toUnit], ([category, from, to]: [string, stri
 }
 
 .info-btn {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    min-height: 40px;
+    min-width: 40px;
     padding: 0.5rem;
     border: none;
     background: none;
@@ -406,6 +420,10 @@ label {
 }
 
 .secondary-btn {
+    align-items: center;
+    display: inline-flex;
+    gap: 0.5rem;
+    justify-content: center;
     padding: 0.75rem 1.5rem;
     border-radius: 8px;
     font-weight: 600;

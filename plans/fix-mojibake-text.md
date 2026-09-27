@@ -2,14 +2,14 @@
 
 ## Context
 
-Production (`https://www.mydevtools.org/unit`) shows `Ã¢â€žÂ¹Ã¯Â¸Â` next to both unit selects in the
+Production (`https://www.mydevtools.org/unit`) shows `Ã¢â€žÂ¹Ã¯Â¸Â` next to both unit selects in the <!-- encoding-check-ignore -->
 Unit Converter, where there should be an info icon. It's **mojibake**: UTF-8 bytes read as
 Windows-1252 and saved back as UTF-8. Here it happened **twice**:
 
 ```
 ℹ️  (U+2139 U+FE0F)  →  UTF-8 bytes E2 84 B9 EF B8 8F
-   → read as cp1252:  â„¹ï¸        (1st pass)
-   → read as cp1252:  Ã¢â€žÂ¹Ã¯Â¸Â  (2nd pass — what the screenshot shows)
+   → read as cp1252:  â„¹ï¸        (1st pass) <!-- encoding-check-ignore -->
+   → read as cp1252:  Ã¢â€žÂ¹Ã¯Â¸Â  (2nd pass — what the screenshot shows) <!-- encoding-check-ignore -->
 ```
 
 **Source:** commit `5b9e6df` ("better ui", 2026-09-12). Its diff replaces clean glyphs with garbled
@@ -25,11 +25,11 @@ pattern. Exactly **5 occurrences in 2 files**:
 
 | File | Line | Garbled | Original | Where it shows | Spec coverage |
 |---|---|---|---|---|---|
-| `src/components/UnitConverter.vue` | 45 | `Ã¢â€žÂ¹Ã¯Â¸Â` | `ℹ️` | "From" unit info button | none |
-| `src/components/UnitConverter.vue` | 86 | `Ã¢â€žÂ¹Ã¯Â¸Â` | `ℹ️` | "To" unit info button | none |
-| `src/components/UnitConverter.vue` | 97 | `Ã°Å¸â€â€ž Swap Units` | `🔄 Swap Units` | Swap button label | `swap-btn` clicked by `13-unit`, text not asserted |
-| `src/components/ToDoList.vue` | 28 | `Ãƒâ€”` | `×` | Remove-task button | `remove-task-btn-*` clicked by `16-todo`, text not asserted |
-| `src/components/ToDoList.vue` | 312 | `'Ã¢Å“â€œ'` | `'✓'` | CSS `::after` tick on checked tasks | none (pseudo-element) |
+| `src/components/UnitConverter.vue` | 45 | `Ã¢â€žÂ¹Ã¯Â¸Â` | `ℹ️` | "From" unit info button | none | <!-- encoding-check-ignore -->
+| `src/components/UnitConverter.vue` | 86 | `Ã¢â€žÂ¹Ã¯Â¸Â` | `ℹ️` | "To" unit info button | none | <!-- encoding-check-ignore -->
+| `src/components/UnitConverter.vue` | 97 | `Ã°Å¸â€â€ž Swap Units` | `🔄 Swap Units` | Swap button label | `swap-btn` clicked by `13-unit`, text not asserted | <!-- encoding-check-ignore -->
+| `src/components/ToDoList.vue` | 28 | `Ãƒâ€”` | `×` | Remove-task button | `remove-task-btn-*` clicked by `16-todo`, text not asserted | <!-- encoding-check-ignore -->
+| `src/components/ToDoList.vue` | 312 | `'Ã¢Å“â€œ'` | `'✓'` | CSS `::after` tick on checked tasks | none (pseudo-element) | <!-- encoding-check-ignore -->
 
 The other non-ASCII text in the repo is legitimate and was checked. `TimeZoneConverter.vue` has
 `×` and accented city names (`São Paulo`, `Bogotá`, `București`, …), and `AppHeader.vue` has `⌘`.
@@ -145,7 +145,7 @@ describe('no garbled text', () => {
 
 ## Verification
 
-1. `npm run check:encoding` gives 0 findings. Temporarily paste `Ã¢â€žÂ¹` into any `.vue` and confirm
+1. `npm run check:encoding` gives 0 findings. Temporarily paste `Ã¢â€žÂ¹` into any `.vue` and confirm <!-- encoding-check-ignore -->
    it fails with the file, line and suggested repair `ℹ`. Revert.
 2. `npm run build`, then `npm run test:e2e`: all specs green, including the new `20-encoding`.
 3. Manual, in light and dark themes, at 1440px and 375px:
