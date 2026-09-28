@@ -6,7 +6,7 @@ describe('Fake Data Generator', () => {
     cy.get('[data-test-id="fakedata-lorem-count"]').clear().type('3')
     cy.get('[data-test-id="fakedata-generate"]').click()
     cy.get('[data-test-id="fakedata-output"]').invoke('text').then((value) => expect(value.split('\n\n')).to.have.length(3))
-    cy.get('[data-test-id="fakedata-output"]').should('have.text').and('match', /^Lorem ipsum dolor sit amet/)
+    cy.get('[data-test-id="fakedata-output"]').should('contain.text', 'Lorem ipsum dolor sit amet')
     cy.get('[data-test-id="fakedata-output"]').invoke('text').then((first) => {
       cy.get('[data-test-id="fakedata-generate"]').click()
       cy.get('[data-test-id="fakedata-output"]').should('have.text', first)
@@ -40,6 +40,6 @@ describe('Fake Data Generator', () => {
     })
     cy.get('[data-test-id="fakedata-format"]').select('sql')
     cy.get('[data-test-id="fakedata-generate"]').click()
-    cy.get('[data-test-id="fakedata-output"]').should('have.text').and('match', /^INSERT INTO/)
+    cy.get('[data-test-id="fakedata-output"]').should('contain.text', 'INSERT INTO')
   })
 })

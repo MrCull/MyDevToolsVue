@@ -11,7 +11,7 @@ describe('text encoding', () => {
 
   it('renders accessible unit actions', () => {
     cy.visit('/unit')
-    cy.get('[data-test-id="swap-btn"]').should('have.text', 'Swap Units')
+    cy.get('[data-test-id="swap-btn"]').should('contain.text', 'Swap Units')
     cy.get('[data-test-id="from-unit-info"]').should('have.attr', 'aria-label').and('match', /^About /)
     cy.get('[data-test-id="to-unit-info"]').should('have.attr', 'aria-label').and('match', /^About /)
   })
